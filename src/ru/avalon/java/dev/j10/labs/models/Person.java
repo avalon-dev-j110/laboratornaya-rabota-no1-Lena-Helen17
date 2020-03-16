@@ -13,6 +13,43 @@ package ru.avalon.java.dev.j10.labs.models;
  */
 public class Person {
 
+    
+    private String name;
+    private String secondName;
+    private String surname;
+    private String middleName;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }   
     /**
      * Возврвщает полное имя человека.
      * <p>
@@ -34,7 +71,15 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        String fullName;
+        if (!secondName.isEmpty()) {
+           String firstLetter = Character.toString(secondName.charAt(0));
+           fullName = name + " " + firstLetter.toUpperCase() + ". " + surname;
+           } else if (!middleName.isEmpty()) {
+            fullName = name + " " + surname + " " + middleName;
+        } else
+            fullName = name + " " + surname;
+        return fullName;
     }
 
     /**
