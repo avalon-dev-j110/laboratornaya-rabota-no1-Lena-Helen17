@@ -1,3 +1,5 @@
+package ru.avalon.java.dev.j10.labs.commons;
+
 /*
  * TODO(Студент): Создайте класс Address.
  *
@@ -13,3 +15,24 @@
  * 4. Подумайте над тем, какие методы должны быть объявлены
  *    в классе.
  */
+public class Address{
+ private String adres;
+
+        
+     public void setAdres(String adres) {
+        this.adres = adres;
+    }
+
+    public String getAdres() {
+        return adres;
+    }
+
+    @Override
+    public String toString() {
+        return adres; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+    
+}

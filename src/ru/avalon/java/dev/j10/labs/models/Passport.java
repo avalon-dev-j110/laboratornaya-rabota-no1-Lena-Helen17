@@ -1,5 +1,10 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+
+import java.time.LocalDate;
+
+
+
 /**
  * Представление о паспортных данных человека.
  * <p>
@@ -15,8 +20,19 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
+public class Passport extends Person{
 
+        
+    private int seriaNambre;
+    private LocalDate happyBirsday;
+    private LocalDate dataVudachi;
+    private String ktoVudal;
+    
+   
+   
+    
+    
+    
     /*
      * TODO(Студент): Закончить определение класса.
      *
@@ -37,4 +53,87 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
+
+    /**
+     *
+     * @param person
+     * @param seriaNambre
+     * @param happyBirsday
+     * @param dataVudachi
+     * @param ktoVudal
+     */
+
+
+    public Passport(Person person, int seriaNambre, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
+        
+        this.seriaNambre = seriaNambre;
+        this.happyBirsday = happyBirsday;
+        this.dataVudachi = dataVudachi;
+        this.ktoVudal = ktoVudal;
+        
+    }
+    
+    public Passport(Person person, int seriaNambre, LocalDate dataVudachi, String ktoVudal) {
+        
+        this.seriaNambre = seriaNambre;
+        this.dataVudachi = dataVudachi;
+        this.ktoVudal = ktoVudal;
+        
+    }
+    
+    public Passport(Person person, int seriaNambre, LocalDate happyBirsday) {
+        
+        this.seriaNambre = seriaNambre;
+        this.happyBirsday = happyBirsday;
+        
+    }
+    
+     public Passport(Person person) {
+     
+     }
+
+    
+
+   
+    public void setSeriaNambre(int seriaNambre) {
+        this.seriaNambre = seriaNambre;
+    }
+
+    public void setHappyBirsday(LocalDate happyBirsday) {
+        this.happyBirsday = happyBirsday;
+    }
+
+    public void setDataVudachi(LocalDate dataVudachi) {
+        this.dataVudachi = dataVudachi;
+    }
+
+    public void setKtoVudal(String ktoVudal) {
+        this.ktoVudal = ktoVudal;
+    }
+
+    public int getSeriaNambre() {
+        return seriaNambre;
+    }
+
+    public LocalDate getHappyBirsday() {
+        return happyBirsday;
+    }
+
+    public LocalDate getDataVudachi() {
+        return dataVudachi;
+    }
+
+    public String getKtoVudal() {
+        return ktoVudal;
+    }
+    
+     
+
+    @Override
+    public String toString() {
+        return  "Имя: " + this.getName() + "\nОтчество/Второе имя: " + getSecondName() + getMiddleName() + "\nФамилия: " + getSurname() + "\nСерия, номер паспорта: " + seriaNambre + 
+                "\nДата выдачи: " + dataVudachi + "\nКто выдал: " + ktoVudal + "\nДень рождения: " + happyBirsday; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

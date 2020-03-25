@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 import ru.avalon.java.dev.j10.labs.models.Person;
 
 public class Main {
@@ -7,11 +9,26 @@ public class Main {
     /*
      * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
      */
-    Main() {
-
-        Person ivanov = null;
-        Person smith = null;
-
+    public static void main(String[] args) {
+        
+        Person ivanov = new Person();
+        ivanov.setName("Иван");
+        ivanov.setMiddleName("Иванович");
+        ivanov.setSurname("Иванов");
+        ivanov.setAdress("г.Москва");
+        ivanov.getFullName();
+        Person smith = new Person();
+        smith.setName("John");
+        smith.setSecondName("Edvard");
+        smith.setSurname("Smith");
+        smith.setAdress("USA");
+        smith.getFullName();
+       
+        
+       String adresIvanov = ivanov.getAddress();
+       String adresSmith = smith.getAddress();
+       
+        System.out.println(adresIvanov + "\n" + adresSmith);
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *
