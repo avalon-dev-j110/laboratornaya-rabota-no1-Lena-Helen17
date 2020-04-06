@@ -11,14 +11,22 @@ public class Main {
         
         Person ivanov = new Person();
         ivanov.setName("Иван");
-        ivanov.setSecondName("Иванович");
+        ivanov.setMiddleName("Иванович");
         ivanov.setSurname("Иванов");
+        ivanov.setAdress("г.Москва");
         ivanov.getFullName();
         Person smith = new Person();
         smith.setName("John");
-        smith.setMiddleName("Edvard");
+        smith.setSecondName("Edvard");
         smith.setSurname("Smith");
+        smith.setAdress("USA");
         smith.getFullName();
+       
+        
+       String adresIvanov = ivanov.getAddress();
+       String adresSmith = smith.getAddress();
+       
+        System.out.println(adresIvanov + "\n" + adresSmith);
 
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
