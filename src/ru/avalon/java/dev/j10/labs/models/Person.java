@@ -20,6 +20,7 @@ public class Person {
     private String middleName = "";
     private Address adres = new Address() ;
     private String adress;
+    private Passport passport;
 
    
     public void setAdress(String adress) {

@@ -15,8 +15,12 @@ import java.time.LocalDate;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
+public class Passport {
      private int seriaNambre;
+     private String name;
+     private String surName;
+     private String fatherName;
+     private String twoName;
     private LocalDate happyBirsday;
     private LocalDate dataVudachi;
     private String ktoVudal;
@@ -41,50 +45,15 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
-public Passport(Person person, int seriaNambre, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
-        
+
+    public Passport(int seriaNambre, String name, String surName, String fatherName, String twoName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
         this.seriaNambre = seriaNambre;
+        this.name = name;
+        this.surName = surName;
+        this.fatherName = fatherName;
+        this.twoName = twoName;
         this.happyBirsday = happyBirsday;
         this.dataVudachi = dataVudachi;
-        this.ktoVudal = ktoVudal;
-        
-    }
-    
-    public Passport(Person person, int seriaNambre, LocalDate dataVudachi, String ktoVudal) {
-        
-        this.seriaNambre = seriaNambre;
-        this.dataVudachi = dataVudachi;
-        this.ktoVudal = ktoVudal;
-        
-    }
-    
-    public Passport(Person person, int seriaNambre, LocalDate happyBirsday) {
-        
-        this.seriaNambre = seriaNambre;
-        this.happyBirsday = happyBirsday;
-        
-    }
-    
-     public Passport(Person person) {
-     
-     }
-
-    
-
-   
-    public void setSeriaNambre(int seriaNambre) {
-        this.seriaNambre = seriaNambre;
-    }
-
-    public void setHappyBirsday(LocalDate happyBirsday) {
-        this.happyBirsday = happyBirsday;
-    }
-
-    public void setDataVudachi(LocalDate dataVudachi) {
-        this.dataVudachi = dataVudachi;
-    }
-
-    public void setKtoVudal(String ktoVudal) {
         this.ktoVudal = ktoVudal;
     }
 
@@ -92,22 +61,64 @@ public Passport(Person person, int seriaNambre, LocalDate happyBirsday, LocalDat
         return seriaNambre;
     }
 
+    public void setSeriaNambre(int seriaNambre) {
+        this.seriaNambre = seriaNambre;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getTwoName() {
+        return twoName;
+    }
+
+    public void setTwoName(String twoName) {
+        this.twoName = twoName;
+    }
+
     public LocalDate getHappyBirsday() {
         return happyBirsday;
+    }
+
+    public void setHappyBirsday(LocalDate happyBirsday) {
+        this.happyBirsday = happyBirsday;
     }
 
     public LocalDate getDataVudachi() {
         return dataVudachi;
     }
 
+    public void setDataVudachi(LocalDate dataVudachi) {
+        this.dataVudachi = dataVudachi;
+    }
+
     public String getKtoVudal() {
         return ktoVudal;
     }
-    
-     
 
-    
-    
-    
+    public void setKtoVudal(String ktoVudal) {
+        this.ktoVudal = ktoVudal;
+    }
 }
 
