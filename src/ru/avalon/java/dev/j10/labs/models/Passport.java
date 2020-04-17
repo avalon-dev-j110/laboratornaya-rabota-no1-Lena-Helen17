@@ -1,4 +1,6 @@
 package ru.avalon.java.dev.j10.labs.models;
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 import java.time.LocalDate;
 /**
  * Представление о паспортных данных человека.
@@ -15,12 +17,12 @@ import java.time.LocalDate;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-public class Passport {
+public class Passport extends Address {
      private int seriaNambre;
      private String name;
      private String surName;
-     private String fatherName;
-     private String twoName;
+     private String fatherName = "";
+     private String twoName = "";
     private LocalDate happyBirsday;
     private LocalDate dataVudachi;
     private String ktoVudal;
@@ -46,16 +48,16 @@ public class Passport {
      *    пределами пакета.
      */
 
-    public Passport(int seriaNambre, String name, String surName, String fatherName, String twoName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
+    public Passport(String adres, int seriaNambre, String name, String surName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
+        super(adres);
         this.seriaNambre = seriaNambre;
         this.name = name;
         this.surName = surName;
-        this.fatherName = fatherName;
-        this.twoName = twoName;
         this.happyBirsday = happyBirsday;
         this.dataVudachi = dataVudachi;
         this.ktoVudal = ktoVudal;
     }
+
 
     public int getSeriaNambre() {
         return seriaNambre;
@@ -119,6 +121,11 @@ public class Passport {
 
     public void setKtoVudal(String ktoVudal) {
         this.ktoVudal = ktoVudal;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
 

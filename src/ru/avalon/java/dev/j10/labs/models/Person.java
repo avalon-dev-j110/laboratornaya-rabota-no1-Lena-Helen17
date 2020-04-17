@@ -1,5 +1,8 @@
 package ru.avalon.java.dev.j10.labs.models;
 import ru.avalon.java.dev.j10.labs.commons.Address;
+
+import java.time.LocalDate;
+
 /**
  * Представление о человеке.
  * <p>
@@ -11,55 +14,13 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  *     <li>пропиской по месту жительства.
  * </ol>
  */
-public class Person {
+public class Person extends Passport{
 
-    
-     private String name = "";
-    private String secondName = "";
-    private String surname = "";
-    private String middleName = "";
-    private Address adres = new Address() ;
-    private String adress;
-    private Passport passport;
-
-   
-    public void setAdress(String adress) {
-        this.adress = adress;
-        adres.setAdres(adress);
-    }
-   
-           
-    public void setName(String name) {
-        this.name = name;
+    public Person(String adres, int seriaNambre, String name, String surName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
+        super(adres, seriaNambre, name, surName, happyBirsday, dataVudachi, ktoVudal);
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }      
     /**
      * Возврвщает полное имя человека.
      * <p>
@@ -81,13 +42,13 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        if (!secondName.isEmpty()) {
-           String firstLetter = Character.toString(secondName.charAt(0));
-            System.out.println(name + " " + firstLetter.toUpperCase() + ". " + surname);
-        } else if (!middleName.isEmpty()) {
-            System.out.println(name + " " + middleName + " " + surname);
+        if (!getTwoName().isEmpty()) {
+           String firstLetter = Character.toString(getTwoName().charAt(0));
+            System.out.println(getName() + " " + firstLetter.toUpperCase() + ". " + getSurName());
+        } else if (!getFatherName().isEmpty()) {
+            System.out.println(getName() + " " + getFatherName() + " " + getSurName());
         } else
-            System.out.println(name + " " + surname);
+            System.out.println(getName() + " " + getSurName());
         return null;
     }
 
@@ -103,7 +64,13 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        String adress = adres.getAdres();
-       return adress;
+             return getAddress();
+    }
+
+    @Override
+    public String toString() {
+        return getName() + "\n" + getFatherName() + "\n" + getTwoName() + "\n" + getSurName() + "\n" +
+                getHappyBirsday() + "\n" + getSeriaNambre() + " " + getKtoVudal() + " " + getDataVudachi() + "\n" +
+                getAdres();
     }
 }

@@ -2,6 +2,8 @@ package ru.avalon.java.dev.j10.labs;
 
 import ru.avalon.java.dev.j10.labs.models.Person;
 
+import java.time.LocalDate;
+
 public class Main {
 
     /*
@@ -9,24 +11,22 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Person ivanov = new Person();
-        ivanov.setName("Иван");
-        ivanov.setMiddleName("Иванович");
-        ivanov.setSurname("Иванов");
-        ivanov.setAdress("г.Москва");
+        Person ivanov = new Person("Москва", 20163458, "Иван", "Иванов",
+                LocalDate.of(1987, 4, 16), LocalDate.of(2005,8,14),
+                "УФМС России");
+
+        ivanov.setFatherName("Иванович");
         ivanov.getFullName();
-        Person smith = new Person();
-        smith.setName("John");
-        smith.setSecondName("Edvard");
-        smith.setSurname("Smith");
-        smith.setAdress("USA");
+
+        Person smith = new Person("USA", 256367, "John", "Smith",
+                LocalDate.of(1800,12,23), LocalDate.of(2000,4,1),
+                "Forma");
+
+        smith.setTwoName("Edvard");
         smith.getFullName();
        
-        
-       String adresIvanov = ivanov.getAddress();
-       String adresSmith = smith.getAddress();
-       
-        System.out.println(adresIvanov + "\n" + adresSmith);
+
+        System.out.println(ivanov.toString() + "\n" + smith.toString());
 
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'

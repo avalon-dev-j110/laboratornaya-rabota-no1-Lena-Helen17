@@ -17,8 +17,11 @@ package ru.avalon.java.dev.j10.labs.commons;/*
 public class Address{
  private String adres;
 
-        
-     public void setAdres(String adres) {
+    public Address(String adres) {
+        this.adres = adres;
+    }
+
+    public void setAdres(String adres) {
         this.adres = adres;
     }
 
