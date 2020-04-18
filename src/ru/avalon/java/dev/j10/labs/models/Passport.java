@@ -17,12 +17,12 @@ import java.time.LocalDate;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-public class Passport extends Address {
-     private int seriaNambre;
-     private String name;
-     private String surName;
-     private String fatherName = "";
-     private String twoName = "";
+public class Passport {
+    private int seriaNambre;
+    private String name;
+    private String surName;
+    private String fatherName = "";
+    private String twoName = "";
     private LocalDate happyBirsday;
     private LocalDate dataVudachi;
     private String ktoVudal;
@@ -48,8 +48,7 @@ public class Passport extends Address {
      *    пределами пакета.
      */
 
-    public Passport(String adres, int seriaNambre, String name, String surName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
-        super(adres);
+    public Passport(int seriaNambre, String name, String surName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
         this.seriaNambre = seriaNambre;
         this.name = name;
         this.surName = surName;
@@ -58,6 +57,16 @@ public class Passport extends Address {
         this.ktoVudal = ktoVudal;
     }
 
+    public String getFullName() {
+        if (!getTwoName().isEmpty()) {
+            String firstLetter = Character.toString(getTwoName().charAt(0));
+            System.out.println(getName() + " " + firstLetter.toUpperCase() + ". " + getSurName());
+        } else if (!getFatherName().isEmpty()) {
+            System.out.println(getName() + " " + getFatherName() + " " + getSurName());
+        } else
+            System.out.println(getName() + " " + getSurName());
+        return null;
+        }
 
     public int getSeriaNambre() {
         return seriaNambre;
@@ -125,7 +134,7 @@ public class Passport extends Address {
 
     @Override
     public String toString() {
-        return super.toString();
+        return  getName () +  " \n "  + getFatherName () +  " \n "  + getTwoName () +  " \n "  + getSurName () +  " \n "  +
+                getHappyBirsday () +  " \n "  + getSeriaNambre () +  "  "  + getKtoVudal () +  "  "  + getDataVudachi () +  "\n";
     }
 }
-

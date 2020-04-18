@@ -15,14 +15,14 @@ public class Main {
                 LocalDate.of(1987, 4, 16), LocalDate.of(2005,8,14),
                 "УФМС России");
 
-        ivanov.setFatherName("Иванович");
+        ivanov.getPassport().setFatherName("Иванович");
         ivanov.getFullName();
 
         Person smith = new Person("USA", 256367, "John", "Smith",
                 LocalDate.of(1800,12,23), LocalDate.of(2000,4,1),
                 "Forma");
 
-        smith.setTwoName("Edvard");
+        smith.getPassport().setTwoName("Edvard");
         smith.getFullName();
        
 

@@ -1,4 +1,5 @@
 package ru.avalon.java.dev.j10.labs.models;
+
 import ru.avalon.java.dev.j10.labs.commons.Address;
 
 import java.time.LocalDate;
@@ -14,12 +15,22 @@ import java.time.LocalDate;
  *     <li>пропиской по месту жительства.
  * </ol>
  */
-public class Person extends Passport{
+public class Person {
+    private Passport passport;
+    private Address address;
 
     public Person(String adres, int seriaNambre, String name, String surName, LocalDate happyBirsday, LocalDate dataVudachi, String ktoVudal) {
-        super(adres, seriaNambre, name, surName, happyBirsday, dataVudachi, ktoVudal);
+        this.passport = new Passport(seriaNambre, name, surName, happyBirsday, dataVudachi, ktoVudal);
+        this.address = new Address(adres);
     }
 
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+    }
 
     /**
      * Возврвщает полное имя человека.
@@ -42,14 +53,7 @@ public class Person extends Passport{
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        if (!getTwoName().isEmpty()) {
-           String firstLetter = Character.toString(getTwoName().charAt(0));
-            System.out.println(getName() + " " + firstLetter.toUpperCase() + ". " + getSurName());
-        } else if (!getFatherName().isEmpty()) {
-            System.out.println(getName() + " " + getFatherName() + " " + getSurName());
-        } else
-            System.out.println(getName() + " " + getSurName());
-        return null;
+      return passport.getFullName();
     }
 
     /**
@@ -64,13 +68,14 @@ public class Person extends Passport{
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-             return getAddress();
+        return address.getAdres();
     }
 
     @Override
     public String toString() {
-        return getName() + "\n" + getFatherName() + "\n" + getTwoName() + "\n" + getSurName() + "\n" +
-                getHappyBirsday() + "\n" + getSeriaNambre() + " " + getKtoVudal() + " " + getDataVudachi() + "\n" +
-                getAdres();
+        return "Person{" +
+                "passport=" + passport +
+                ", address=" + address +
+                '}';
     }
 }
